@@ -1,0 +1,12 @@
+os: osx
+osx_image: xcode11.3
+
+addons:
+  homebrew:
+    packages:
+    - openssl@1.1
+    - mbedtls --HEAD
+
+script:
+ - make all
+ - make USE_HW_AUTH=1 USE_NFC=1 all
